@@ -16,6 +16,7 @@ contract HNXCrowdSale is CappedCrowdsale, RefundableCrowdsale, MintedCrowdsale {
         address _wallet, uint256 _cap, MintableToken _token, uint256 _goal) public
     Crowdsale(_rate, _wallet, _token)
     CappedCrowdsale(_cap)
+    TimedCrowdsale(_openingTime, _closingTime)
     RefundableCrowdsale(_goal)
     {
         require(_goal <= _cap);
